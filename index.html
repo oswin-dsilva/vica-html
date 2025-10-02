@@ -3,46 +3,396 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Vasaikar Connect">
-    <meta property="og:description" content="Connect, celebrate, and engage with Vasaikars in Canada through events, memories, and stories on Vasaikar Connect!">
-    <meta property="og:image" content="https://mocha-cdn.com/og.png" type="image/png">
-    <meta property="og:url" content="https://wr5elmlca76s2.mocha.app">
-    <meta property="og:type" content="website">
-    <meta property="og:author" content="Mocha">
-    <meta property="og:site_name" content="Vasaikar Connect">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:site" content="@get_mocha">
-    <meta property="twitter:title" content="Vasaikar Connect">
-    <meta property="twitter:description" content="Connect, celebrate, and engage with Vasaikars in Canada through events, memories, and stories on Vasaikar Connect!">
-    <meta property="twitter:image" content="https://mocha-cdn.com/og.png" type="image/png">
-    <link rel="shortcut icon" href="https://mocha-cdn.com/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://mocha-cdn.com/apple-touch-icon.png" type="image/png">
-    <title>Vasaikar Connect</title>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Swiper CSS for carousel -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/components.css">
+    <title>वसईकर in Canada | Home</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#b91c1c',
+              secondary: '#ea580c',
+              accent: '#f59e0b',
+            },
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+      .hero-bg {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('http://static.photos/travel/1200x630/10');
+        background-size: cover;
+        background-position: center;
+      }
+      .nav-link:hover {
+        color: #f59e0b;
+      }
+      .event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+    </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav id="navbar"></nav>
+<body class="font-sans bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="flex items-center space-x-2">
+        <img src="https://i.ibb.co/SDdLvvPm/VICA-removebg-preview.png" alt="Logo" class="h-12 w-12 rounded-full">
+        <span class="text-xl font-bold text-primary">वसईकर In Canada</span>
+      </a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#" class="nav-link text-gray-700 font-medium">Home</a>
+        <a href="#events" class="nav-link text-gray-700 font-medium">Events</a>
+        <a href="#gallery" class="nav-link text-gray-700 font-medium">Gallery</a>
+        <a href="#reading" class="nav-link text-gray-700 font-medium">Reading Corner</a>
+        <a href="#join" class="nav-link text-gray-700 font-medium">Join Us</a>
+      </div>
+       <div class="absolute left-1/2 transform -translate-x-1/2">
+      <img src="https://i.ibb.co/wqCpKbJ/a-silver-cross-with-a-crucifix-on-it-the-crucifix-is-jesus-christ-png-removebg-preview.png" 
+           alt="Extra Icon" class="h-12 w-15">
+       </div>
+      <button class="md:hidden focus:outline-none" id="menu-toggle">
+        <i data-feather="menu" class="text-gray-700"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden bg-white w-full py-2 px-4 shadow-lg" id="mobile-menu">
+      <a href="#" class="block py-2 text-gray-700 hover:text-accent">Home</a>
+      <a href="#events" class="block py-2 text-gray-700 hover:text-accent">Events</a>
+      <a href="#gallery" class="block py-2 text-gray-700 hover:text-accent">Gallery</a>
+      <a href="#reading" class="block py-2 text-gray-700 hover:text-accent">Reading Corner</a>
+      <a href="#join" class="block py-2 text-gray-700 hover:text-accent">Join Us</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-bg text-white py-20 md:py-32">
+    <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to Vasaikars in Canada</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Preserving our rich culture and traditions while building a strong community across Canada.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#join" class="bg-accent hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full transition duration-300">Join Our Community</a>
+        <a href="#events" class="bg-transparent hover:bg-white hover:text-primary text-white font-bold py-3 px-6 border-2 border-white rounded-full transition duration-300">Upcoming Events</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4" data-aos="fade-up">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-4">About VICACanada</h2>
+        <div class="w-20 h-1 bg-secondary mx-auto"></div>
+      </div>
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/2">
+          <img src="http://static.photos/people/640x360/15" alt="Community Gathering" class="rounded-lg shadow-lg">
+        </div>
+        <div class="md:w-1/2">
+          <p class="text-lg text-gray-700 mb-4">Vasaikars in Canada Association (VICA) is a non-profit organization established to unite people of Vasaikar origin residing in Canada. Our mission is to preserve and promote our cultural heritage while helping community members adapt to Canadian society. </p>
+          <p class="text-lg text-gray-700 mb-4">वसईकर इन कॅनेडा (VICA) ही कॅनेडामधील वसईकर वंशीयांना एकत्र आणण्यासाठी स्थापन झालेली नानफा संस्था आहे. आमचे ध्येय आपल्या सांस्कृतिक वारशाचे जतन करणे आणि वसईकर समुदायाला कॅनेडियन समाजाशी जुळवून देणे आहे. दर वर्षी आम्ही सांस्कृतिक कार्यक्रम, उत्सव आणि सामाजिक मेळावे आयोजित करून परंपरा जिवंत ठेवतो आणि सदस्यांसाठी नेटवर्क तयार करतो.</p>
+          <div class="flex flex-wrap gap-4 mt-6">
+            <div class="flex items-center">
+              <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-3">
+                <i data-feather="users" class="text-primary"></i>
+              </div>
+              <span class="font-medium">300+ Members</span>
+            </div>
+            <div class="flex items-center">
+              <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-3">
+                <i data-feather="heart" class="text-primary"></i>
+              </div>
+              <span class="font-medium">50+ Families</span>
+            </div>
+            <div class="flex items-center">
+              <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-3">
+                <i data-feather="calendar" class="text-primary"></i>
+              </div>
+              <span class="font-medium">2+ Events Yearly</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section id="events" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4" data-aos="fade-up">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-4">Upcoming Events</h2>
+        <div class="w-20 h-1 bg-secondary mx-auto"></div>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Join us for our upcoming cultural events and celebrations</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Event 1 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden event-card transition duration-300">
+          <img src="http://static.photos/event/640x360/1" alt="Event" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <i data-feather="calendar" class="mr-2 w-4 h-4"></i>
+              <span>November 15, 2025 | 7:00 PM</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">VICA Christmas Party - 2025</h3>
+            <div class="flex items-center text-sm text-gray-500 mb-3">
+              <i data-feather="map-pin" class="mr-2 w-4 h-4"></i>
+              <span>Stay tuned – the jolly venue will be unwrapped soon!</span>
+            </div>
+            <p class="text-gray-600 mb-4">Celebrate Christmas with us over festive food, music, and joyful performances highlighting the warmth of Vasaikar culture</p>
+            <a href="https://www.evite.com/_ct/31fac881d35210a5d54bfcb49d6c71657f82c75e/view_save_the_date_bt" class="inline-block bg-primary hover:bg-red-800 text-white font-medium py-2 px-4 rounded transition duration-300">RSVP Now</a>
+          </div>
+        </div>
+        
+        <!-- Event 2 
+        <div class="bg-white rounded-lg shadow-md overflow-hidden event-card transition duration-300">
+          <img src="http://static.photos/event/640x360/2" alt="Event" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <i data-feather="calendar" class="mr-2 w-4 h-4"></i>
+              <span>July 22, 2023 | 5:30 PM</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Youth Cultural Workshop</h3>
+            <div class="flex items-center text-sm text-gray-500 mb-3">
+              <i data-feather="map-pin" class="mr-2 w-4 h-4"></i>
+              <span>Mississauga Cultural Hall</span>
+            </div>
+            <p class="text-gray-600 mb-4">Interactive workshop for youth to learn about traditional Vasaikar arts, crafts, and folklore.</p>
+            <a href="#" class="inline-block bg-primary hover:bg-red-800 text-white font-medium py-2 px-4 rounded transition duration-300">RSVP Now</a>
+          </div>
+        </div> -->
+        
+        <!-- Event 3 
+        <div class="bg-white rounded-lg shadow-md overflow-hidden event-card transition duration-300">
+          <img src="http://static.photos/event/640x360/3" alt="Event" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <i data-feather="calendar" class="mr-2 w-4 h-4"></i>
+              <span>August 12, 2023 | 11:00 AM</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Family Picnic Day</h3>
+            <div class="flex items-center text-sm text-gray-500 mb-3">
+              <i data-feather="map-pin" class="mr-2 w-4 h-4"></i>
+              <span>Rouge Park, Toronto</span>
+            </div>
+            <p class="text-gray-600 mb-4">Annual family picnic with traditional games, food, and activities for all ages.</p>
+            <a href="#" class="inline-block bg-primary hover:bg-red-800 text-white font-medium py-2 px-4 rounded transition duration-300">RSVP Now</a>
+          </div>-->
+        </div>
+      </div>
+      <!--<div class="text-center mt-10">
+        <a href="#" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium py-2 px-6 rounded-full transition duration-300">View All Events</a>
+      </div>-->
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 bg-white">
+    <div class="container mx-auto px-4" data-aos="fade-up">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-4">Photo Gallery</h2>
+        <div class="w-20 h-1 bg-secondary mx-auto"></div>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Memories from our community events and celebrations</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Gallery Items -->
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+          <img src="http://static.photos/event/640x360/4" alt="Event photo" class="w-full h-48 object-cover transition duration-500">
+        </div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+          <img src="http://static.photos/event/640x360/5" alt="Event photo" class="w-full h-48 object-cover transition duration-500">
+        </div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+          <img src="http://static.photos/event/640x360/6" alt="Event photo" class="w-full h-48 object-cover transition duration-500">
+        </div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+          <img src="http://static.photos/event/640x360/7" alt="Event photo" class="w-full h-48 object-cover transition duration-500">
+        </div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+          <img src="http://static.photos/event/640x360/8" alt="Event photo" class="w-full h-48 object-cover transition duration-500">
+        </div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+          <img src="http://static.photos/event/640x360/9" alt="Event photo" class="w-full h-48 object-cover transition duration-500">
+        </div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+          <img src="http://static.photos/event/640x360/10" alt="Event photo" class="w-full h-48 object-cover transition duration-500">
+        </div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+          <img src="http://static.photos/event/640x360/11" alt="Event photo" class="w-full h-48 object-cover transition duration-500">
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a href="#" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium py-2 px-6 rounded-full transition duration-300">View Full Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reading Corner Section -->
+  <section id="reading" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4" data-aos="fade-up">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-4">Reading Corner</h2>
+        <div class="w-20 h-1 bg-secondary mx-auto"></div>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Articles, stories, and updates from our community</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Article 1 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="https://i.ibb.co/sv14hVNh/image.png" alt="Article" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-2">Every Month</div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">Suvarta - Heartbeat of our Vasai</h3>
+            <p class="text-gray-600 mb-4"></p>
+            <a href="https://suvarta.org/" class="text-primary font-medium inline-flex items-center">Read More <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+          </div>
+        </div>
+        
+        <!-- Article 2 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="http://static.photos/culture/640x360/2" alt="Article" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-2">April 3, 2023</div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">The History of Vasaikar Cuisine</h3>
+            <p class="text-gray-600 mb-4">Exploring the unique flavors and traditional cooking methods of our homeland.</p>
+            <a href="#" class="text-primary font-medium inline-flex items-center">Read More <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+          </div>
+        </div>
+        
+        <!-- Article 3 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="http://static.photos/culture/640x360/3" alt="Article" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-2">March 20, 2023</div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">Youth Perspectives: Growing Up Vasaikar in Canada</h3>
+            <p class="text-gray-600 mb-4">Young community members share their experiences balancing two cultures.</p>
+            <a href="#" class="text-primary font-medium inline-flex items-center">Read More <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a href="#" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium py-2 px-6 rounded-full transition duration-300">View All Articles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Us Section -->
+  <section id="join" class="py-16 bg-primary text-white">
+    <div class="container mx-auto px-4" data-aos="fade-up">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Join Our Community</h2>
+        <div class="w-20 h-1 bg-accent mx-auto"></div>
+        <p class="mt-4 max-w-2xl mx-auto">Become part of the Vasaikars in Canada family and stay connected with our events and activities.</p>
+      </div>
+      <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-8">
+        <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" class="space-y-6">
+          <input type="hidden" name="_subject" value="New Join Request from VICA Website">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+              <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent">
+            </div>
+            <div>
+              <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent">
+            </div>
+          </div>
+          <div>
+            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent">
+          </div>
+          <div>
+            <label for="city" class="block text-gray-700 font-medium mb-2">City of Residence</label>
+            <input type="text" id="city" name="city" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent">
+          </div>
+          <div>
+            <label for="message" class="block text-gray-700 font-medium mb-2">Message (Optional)</label>
+            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="bg-accent hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-flex items-center">
+              Submit <i data-feather="send" class="ml-2 w-4 h-4"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">See you soon!</h3>
+          <p class="text-gray-400">वसईच्या मातीचा सुगंध, आपुलकीचा वारसा आणि परंपरेची गोड चव आम्ही कॅनडाच्या थंडगार वातावरणातही हृदयाशी जपून ठेवतो. दूरदेशी असलो तरी वसईकर म्हणून एकमेकांच्या सहवासातून आम्ही आपल्या संस्कृतीचे तेज पसरवत आहोत आणि प्रेम, ऐक्य व स्नेहाने एक भक्कम समुदाय उभारत आहोत.</p>
+
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+            <li><a href="#events" class="text-gray-400 hover:text-white transition duration-300">Events</a></li>
+            <li><a href="#gallery" class="text-gray-400 hover:text-white transition duration-300">Gallery</a></li>
+            <li><a href="#reading" class="text-gray-400 hover:text-white transition duration-300">Reading Corner</a></li>
+            <li><a href="#join" class="text-gray-400 hover:text-white transition duration-300">Join Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <i data-feather="mail" class="mr-3 text-gray-400"></i>
+              <span class="text-gray-400">vasaivica@gmail.com</span>
+            </li>
+
+            <li class="flex items-center">
+              <i data-feather="map-pin" class="mr-3 text-gray-400"></i>
+              <span class="text-gray-400">Toronto, Ontario, Canada</span>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-400">
+        <p>&copy;Vasaikars in Canada Association. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        menu.classList.add('block');
+      } else {
+        menu.classList.remove('block');
+        menu.classList.add('hidden');
+      }
+    });
     
-    <!-- Main Content -->
-    <main id="main-content" class="flex-grow"></main>
-    
-    <!-- Footer -->
-    <footer id="footer"></footer>
-    
-    <!-- Swiper JS for carousel -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
-    <!-- App Scripts -->
-    <script type="module" src="./js/app.js"></script>
+    // Initialize AOS and Feather Icons
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        once: true
+      });
+      feather.replace();
+    });
+  </script>
 </body>
 </html>
