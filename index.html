@@ -27,7 +27,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <style>
+    
+<style>
+/* --- Base Hero Section --- */
 .hero-bg {
   background: url('https://i.ibb.co/zh33R3Np/head.jpg') no-repeat center center;
   background-size: cover;
@@ -66,63 +68,28 @@
   background-color: #1d4ed8;
   transform: translateY(-2px);
 }
-/* --- Responsive Hero Section Tweaks --- */
+
+/* --- Responsive Hero Section (Mobile & Tablet) --- */
 @media (max-width: 768px) {
   .hero-bg {
-    height: 60vh;
-    background-size: contain; /* show full image without cropping */
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-color: #000; /* fallback background to fill space below image */
-    align-items: center; /* center buttons vertically */
+    height: 70vh; /* ensure enough visible area */
+    background-size: cover; /* maintain proportion but fill width */
+    background-position: top center; /* ensure head area is visible */
     padding-bottom: 0;
   }
 
+  /* Hide buttons inside image */
   .hero-bg .flex {
-    flex-direction: column;
-    gap: 1rem;
+    display: none;
   }
 
-  .hero-btn {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
-  }
-}
-
-/* For very small phones (Pixel / iPhone Mini size) */
-@media (max-width: 480px) {
-  .hero-bg {
-    height: 55vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-color: #000;
-  }
-
-  .hero-btn {
-    width: 80%;
-    max-width: 260px;
-  }
-}
-/* --- Mobile View Fixes --- */
-@media (max-width: 768px) {
-  .hero-bg {
-    height: auto; /* image resizes naturally */
-    background-size: contain; /* full image visible */
-    padding-bottom: 0;
-  }
-
-  /* Move buttons outside image area */
+  /* Buttons below image */
   .hero-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -1rem; /* pulls up slightly if needed */
+    margin-top: 1rem;
     margin-bottom: 2rem;
-  }
-
-  .hero-bg .flex {
-    display: none; /* hide buttons inside hero on mobile */
   }
 
   .mobile-buttons {
@@ -131,15 +98,20 @@
     gap: 1rem;
     flex-wrap: wrap;
   }
+
+  .hero-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
 }
 
-/* Desktop: hide mobile buttons */
+/* --- Desktop View (Hide mobile buttons) --- */
 @media (min-width: 769px) {
   .mobile-buttons {
     display: none;
   }
 }
-</style>       
+</style>
   
 </head>
 <body class="font-sans bg-gray-50">
