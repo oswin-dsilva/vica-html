@@ -66,6 +66,40 @@
   background-color: #1d4ed8; /* darker blue on hover */
   transform: translateY(-2px);
 }
+/* --- Mobile Optimizations for Hero Section --- */
+@media (max-width: 768px) {
+  .hero-bg {
+    height: 60vh; /* reduce height so the whole image fits better */
+    background-position: top center; /* show the upper part of the image */
+    padding-bottom: 2rem; /* less spacing at bottom */
+  }
+
+  .hero-btn {
+    font-size: 0.9rem; /* slightly smaller text */
+    padding: 0.6rem 1.2rem;
+  }
+
+  .hero-bg .flex {
+    flex-direction: column; /* stack buttons vertically */
+    gap: 1rem;
+  }
+}
+
+/* Even smaller devices (phones under 480px wide) */
+@media (max-width: 480px) {
+  .hero-bg {
+    height: 55vh;
+    background-size: cover;
+    background-position: top;
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-btn {
+    width: 80%;
+    max-width: 250px;
+    text-align: center;
+  }
+}        
 </style>
 </head>
 <body class="font-sans bg-gray-50">
