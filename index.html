@@ -29,41 +29,41 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <style>
 .hero-bg {
-  background: url('https://i.ibb.co/zh33R3Np/head.jpg');
+  background: url('https://i.ibb.co/zh33R3Np/head.jpg') no-repeat center center;
   background-size: cover;
-  background-position: center;
-  height: 85vh; /* full screen height */
+  height: 85vh;
   display: flex;
-  align-items: flex-end; /* pushes content to the bottom */
+  align-items: flex-end;
   justify-content: center;
-  padding-bottom: 3rem; /* space above the bottom edge */
+  padding-bottom: 3rem;
 }
 
+/* Shared button styling */
 .hero-btn {
   color: white;
   font-weight: bold;
   padding: 0.75rem 1.5rem;
-  border-radius: 9999px; /* fully rounded */
+  border-radius: 9999px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Red button - Join Our Community */
+/* Red button */
 .btn-red {
-  background-color: #dc2626; /* Tailwind red-600 */
+  background-color: #dc2626;
   border: 2px solid #dc2626;
 }
 .btn-red:hover {
-  background-color: #b91c1c; /* darker red on hover */
+  background-color: #b91c1c;
   transform: translateY(-2px);
 }
 
-/* Blue button - Upcoming Events */
+/* Blue button */
 .btn-blue {
-  background-color: #2563eb; /* Tailwind blue-600 */
+  background-color: #2563eb;
   border: 2px solid #2563eb;
 }
 .btn-blue:hover {
-  background-color: #1d4ed8; /* darker blue on hover */
+  background-color: #1d4ed8;
   transform: translateY(-2px);
 }
 /* --- Responsive Hero Section Tweaks --- */
@@ -104,7 +104,43 @@
     max-width: 260px;
   }
 }
-</style>
+/* --- Mobile View Fixes --- */
+@media (max-width: 768px) {
+  .hero-bg {
+    height: auto; /* image resizes naturally */
+    background-size: contain; /* full image visible */
+    padding-bottom: 0;
+  }
+
+  /* Move buttons outside image area */
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -1rem; /* pulls up slightly if needed */
+    margin-bottom: 2rem;
+  }
+
+  .hero-bg .flex {
+    display: none; /* hide buttons inside hero on mobile */
+  }
+
+  .mobile-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+/* Desktop: hide mobile buttons */
+@media (min-width: 769px) {
+  .mobile-buttons {
+    display: none;
+  }
+}
+</style>       
+  
 </head>
 <body class="font-sans bg-gray-50">
   <!-- Navigation -->
@@ -136,16 +172,25 @@
   </nav>
 
   <!-- Hero Section -->
-   <section class="hero-bg text-white">
+<section class="hero-bg text-white">
   <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+    <!-- Desktop buttons (inside image) -->
     <div class="flex flex-wrap justify-center gap-4">
       <a href="#join" class="hero-btn btn-red">Join Our Community</a>
       <a href="#events" class="hero-btn btn-blue">Upcoming Events</a>
     </div>
   </div>
 </section>
-  
-    <!-- Daily Live Marathi Mass Section -->
+
+<!-- Mobile buttons (below image) -->
+<div class="hero-container">
+  <div class="mobile-buttons">
+    <a href="#join" class="hero-btn btn-red">Join Our Community</a>
+    <a href="#events" class="hero-btn btn-blue">Upcoming Events</a>
+  </div>
+</div>
+
+       <!-- Daily Live Marathi Mass Section -->
   <section class="py-16 bg-gray-100">
     <div class="container mx-auto px-4 text-center" data-aos="fade-up">
       
