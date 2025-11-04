@@ -72,17 +72,17 @@
 /* --- Responsive Hero Section (Mobile & Tablet) --- */
 @media (max-width: 768px) {
   .hero-bg {
-    height: 60vh; /* give enough room for image head */
+    height: 50vh;
     background-size: cover;
-    background-position: top center; /* show top part of image */
-    padding-bottom: 0; /* remove bottom spacing */
-    align-items: center; /* center buttons vertically */
+    background-position: top center;
+    align-items: flex-start; /* start higher */
+    padding-top: 2rem; /* adjust how high the buttons appear */
+    padding-bottom: 0;
   }
 
   .hero-bg .flex {
     flex-direction: column;
     gap: 1rem;
-    margin-top: 8rem; /* pushes buttons slightly downward if needed */
   }
 
   .hero-btn {
@@ -90,12 +90,7 @@
     padding: 0.6rem 1.2rem;
   }
 }
-/* --- Desktop View (Hide mobile buttons) --- */
-@media (min-width: 769px) {
-  .mobile-buttons {
-    display: none;
-  }
-}
+
 </style>
   
 </head>
@@ -131,7 +126,6 @@
   <!-- Hero Section -->
 <section class="hero-bg text-white">
   <div class="container mx-auto px-4 text-center" data-aos="fade-up">
-    <!-- Desktop buttons (inside image) -->
     <div class="flex flex-wrap justify-center gap-4">
       <a href="#join" class="hero-btn btn-red">Join Our Community</a>
       <a href="#events" class="hero-btn btn-blue">Upcoming Events</a>
