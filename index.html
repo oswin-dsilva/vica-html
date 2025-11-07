@@ -28,16 +28,33 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     
+
 <style>
-/* --- Base Hero Section --- */
-.hero-bg {
-  background: url('https://i.ibb.co/zh33R3Np/head.jpg') no-repeat center center;
-  background-size: cover;
-  height: 85vh;
+/* ---- Hero Section ---- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background-color: #f5f5f5; /* optional for contrast */
+}
+
+.hero-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* ensures no cropping */
+  max-height: 500px;   /* Optional: Adjust height if too tall */
+  margin: 0 auto;
+}
+
+/* ---- Button Container (below the image) ---- */
+.hero-buttons {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 5vh;
+  gap: 1rem;
 }
 
 /* Shared button styling */
@@ -47,40 +64,34 @@
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
 }
 
-/* Red button */
 .btn-red {
   background-color: #dc2626;
-  border: 2px solid #dc2626;
 }
 .btn-red:hover {
   background-color: #b91c1c;
   transform: translateY(-2px);
 }
 
-/* Blue button */
 .btn-blue {
   background-color: #2563eb;
-  border: 2px solid #2563eb;
 }
 .btn-blue:hover {
   background-color: #1d4ed8;
   transform: translateY(-2px);
 }
 
-/* --- Responsive Hero Section (Mobile & Tablet) --- */
+/* ---- Responsive Fix for Mobile & Tablet ---- */
 @media (max-width: 768px) {
-  .hero-bg {
-    height: 75vh;
-    background-size: contain;
-    background-position: top center;
-    align-items: flex-start; /* moves content higher */
-    padding-bottom: 3rem;
+  .hero-buttons {
+    bottom: 2%;
+    flex-direction: column;
   }
-   .hero-btn {
+  .hero-btn {
     font-size: 0.9rem;
-    padding-bottom: 0.6rem 1.2rem;
+    padding: 0.6rem 1.2rem;
   }
 }
 </style>
@@ -115,15 +126,16 @@
     </div>
   </nav>
 
- <!-- Hero Section -->
-<section class="hero-bg text-white">
-  <div class="container mx-auto px-4 text-center" data-aos="fade-up">
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="#join" class="hero-btn btn-red">Join Our Community</a>
-      <a href="#events" class="hero-btn btn-blue">Upcoming Events</a>
-    </div>
+<!-- ✅ Hero Section -->
+<section class="hero-section">
+  <img src="https://i.ibb.co/zh33R3Np/head.jpg" alt="Welcome to Vasaikar in Canada">
+
+  <div class="hero-buttons">
+    <a href="#join" class="hero-btn btn-red">Join Our Community</a>
+    <a href="#events" class="hero-btn btn-blue">Upcoming Events</a>
   </div>
 </section>
+
 
        <!-- Daily Live Marathi Mass Section -->
   <section class="py-16 bg-gray-100">
