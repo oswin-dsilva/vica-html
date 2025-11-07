@@ -178,9 +178,20 @@
         <div class="w-20 h-1 bg-secondary mx-auto"></div>
       </div>
       <div class="flex flex-col md:flex-row items-center gap-8">
-        <div class="md:w-1/2">
-          <img src="http://static.photos/people/640x360/15" alt="Community Gathering" class="rounded-lg shadow-lg">
-        </div>
+        <div class="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg">
+  <div id="about-slider" class="relative w-full h-64 md:h-80">
+    <img src="https://vicacanada.com/images/1.jpg" class="slide hidden absolute inset-0 w-full h-full object-cover rounded-lg">
+    <img src="https://vicacanada.com/images/2.jpg" class="slide hidden absolute inset-0 w-full h-full object-cover rounded-lg">
+    <img src="https://vicacanada.com/images/3.jpg" class="slide hidden absolute inset-0 w-full h-full object-cover rounded-lg">
+    <img src="https://vicacanada.com/images/4.jpg" class="slide hidden absolute inset-0 w-full h-full object-cover rounded-lg">
+    <img src="https://vicacanada.com/images/5.jpg" class="slide hidden absolute inset-0 w-full h-full object-cover rounded-lg">
+    <img src="https://vicacanada.com/images/6.jpg" class="slide hidden absolute inset-0 w-full h-full object-cover rounded-lg">
+    <img src="https://vicacanada.com/images/8.jpg" class="slide hidden absolute inset-0 w-full h-full object-cover rounded-lg">
+    <img src="https://vicacanada.com/images/9.jpg" class="slide hidden absolute inset-0 w-full h-full object-cover rounded-lg">
+    <img src="https://vicacanada.com/images/10.jpg" class="slide hidden absolute inset-0 w-full h-full object-cover rounded-lg">
+      </div>
+</div>
+
         <div class="md:w-1/2">
           <p class="text-lg text-gray-700 mb-4">Vasaikars in Canada Association (VICA) is a non-profit organization established to unite people of Vasaikar origin residing in Canada. Our mission is to preserve and promote our cultural heritage while helping community members adapt to Canadian society. </p>
           <p class="text-lg text-gray-700 mb-4">वसईकर इन कॅनेडा (VICA) ही कॅनेडामधील वसईकर वंशीयांना एकत्र आणण्यासाठी स्थापन झालेली नानफा संस्था आहे. आमचे ध्येय आपल्या सांस्कृतिक वारशाचे जतन करणे आणि वसईकर समुदायाला कॅनेडियन समाजाशी जुळवून देणे आहे. दर वर्षी आम्ही सांस्कृतिक कार्यक्रम, उत्सव आणि सामाजिक मेळावे आयोजित करून परंपरा जिवंत ठेवतो आणि सदस्यांसाठी नेटवर्क तयार करतो.</p>
@@ -496,5 +507,24 @@
       feather.replace();
     });
   </script>
+    // For Auto scroll Images in About Section
+    <script>
+  let index = 0;
+  const slides = document.querySelectorAll("#about-slider .slide");
+
+  function showSlide() {
+    slides.forEach((slide, i) => {
+      slide.classList.add("hidden");
+      slide.style.opacity = "0";
+    });
+    slides[index].classList.remove("hidden");
+    slides[index].style.opacity = "1";
+
+    index = (index + 1) % slides.length; // Loop to next image
+  }
+
+  showSlide(); // Show first image
+  setInterval(showSlide, 3000); // Change every 3 seconds
+</script>
 </body>
 </html>
