@@ -507,24 +507,22 @@
       feather.replace();
     });
   </script>
-    // For Auto scroll Images in About Section
-   <script>
+   <!-- ✅ For Auto Scroll Images in About Section -->
+<script>
   document.addEventListener("DOMContentLoaded", function () {
     let index = 0;
     const slides = document.querySelectorAll("#about-slider .slide");
 
+    if (slides.length === 0) return; // Prevent errors if no slides loaded
+
     function showSlide() {
-      slides.forEach(slide => {
-        slide.classList.add("hidden");
-        slide.style.opacity = "0";
-      });
+      slides.forEach(slide => slide.classList.add("hidden"));
       slides[index].classList.remove("hidden");
-      slides[index].style.opacity = "1";
       index = (index + 1) % slides.length;
     }
 
-    showSlide(); // Show first slide immediately
-    setInterval(showSlide, 3000); // Change every 3 seconds
+    showSlide();
+    setInterval(showSlide, 3000);
   });
 </script>
 </body>
