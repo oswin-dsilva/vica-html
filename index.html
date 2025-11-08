@@ -170,19 +170,23 @@
     </div>
   </section>
 
- <!-- About Section -->
-<section class="py-16 bg-white">
-  <div class="container mx-auto px-4" data-aos="fade-up">
+<!-- ✅ About VICA Canada -->
+<section class="py-16 bg-white" id="about">
+  <div class="container mx-auto px-4">
+
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-primary mb-4">About VICA Canada</h2>
       <div class="w-20 h-1 bg-secondary mx-auto"></div>
     </div>
 
     <div class="flex flex-col md:flex-row items-center gap-8">
-
-      <!-- ✅ Image Slider Block -->
-      <div class="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg bg-white">
-        <div id="about-slider" class="relative w-full min-h-64 md:min-h-80">
+      
+      <!-- ✅ Image Slider -->
+      <div class="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg bg-black">
+        <div id="about-slider"
+          class="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]">
+          
+          <!-- ✅ First image is visible by default -->
           <img src="https://vicacanada.com/new/images/1.jpg" class="slide absolute inset-0 w-full h-full object-contain">
           <img src="https://vicacanada.com/new/images/2.jpg" class="slide hidden absolute inset-0 w-full h-full object-contain">
           <img src="https://vicacanada.com/new/images/3.jpg" class="slide hidden absolute inset-0 w-full h-full object-contain">
@@ -512,23 +516,19 @@
   </script>
    <!-- ✅ For Auto Scroll Images in About Section -->
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll("#about-slider .slide");
-    let index = 0;
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll("#about-slider .slide");
+  let index = 0;
 
-    if (slides.length === 0) return;
+  function showSlide() {
+    slides.forEach(slide => slide.classList.add("hidden"));
+    slides[index].classList.remove("hidden");
+    index = (index + 1) % slides.length;
+  }
 
-    function showSlide() {
-      slides.forEach((slide, i) => {
-        slide.classList.add("hidden");
-      });
-      slides[index].classList.remove("hidden");
-      index = (index + 1) % slides.length;
-    }
-
-    showSlide();
-    setInterval(showSlide, 3000);
-  });
+  showSlide();
+  setInterval(showSlide, 3000);
+});
 </script>
 </body>
 </html>
