@@ -101,6 +101,28 @@
     margin-bottom: 0px;
   }
 }
+    /* Image Slider Styles */
+#about-slider {
+  min-height: 220px; /* Makes sure it's visible on mobile */
+  height: auto;
+  position: relative;
+}
+
+#about-slider .slide {
+  display: block !important;   /* Override “hidden” from Tailwind */
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;          /* Keeps full image visible */
+  transition: opacity 0.5s ease-in-out;
+}
+
+#about-slider .slide.active {
+  opacity: 1;
+  z-index: 2;
+}
 </style>
     
 </head>
@@ -516,19 +538,27 @@
   </script>
    <!-- ✅ For Auto Scroll Images in About Section -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const slides = document.querySelectorAll("#about-slider .slide");
-  let index = 0;
+  document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll("#about-slider .slide");
+    let index = 0;
 
-  function showSlide() {
-    slides.forEach(slide => slide.classList.add("hidden"));
-    slides[index].classList.remove("hidden");
-    index = (index + 1) % slides.length;
-  }
+    if (slides.length === 0) return;
 
-  showSlide();
-  setInterval(showSlide, 3000);
-});
+    // Make sure all slides are visible but transparent
+    slides.forEach(slide => {
+      slide.classList.remove("hidden");
+      slide.classList.remove("active");
+    });
+
+    // Activate the first one
+    slides[0].classList.add("active");
+
+    setInterval(() => {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }, 3000);
+  });
 </script>
 </body>
 </html>
