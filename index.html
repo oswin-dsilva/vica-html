@@ -193,34 +193,48 @@
   </section>
 
 <!-- ✅ About VICA Canada -->
-<section class="py-16 bg-white" id="about">
-  <div class="container mx-auto px-4">
-
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4" data-aos="fade-up">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-primary mb-4">About VICA Canada</h2>
       <div class="w-20 h-1 bg-secondary mx-auto"></div>
     </div>
 
     <div class="flex flex-col md:flex-row items-center gap-8">
-      
-      <!-- ✅ Image Slider -->
-      <div class="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg bg-white">
-        <div id="about-slider"
-          class="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]">
-          
-          <!-- ✅ First image is visible by default -->
-          <img src="https://vicacanada.com/new/images/1.jpg" class="slide absolute inset-0 w-full h-full object-contain">
-          <img src="https://vicacanada.com/new/images/2.jpg" class="slide hidden absolute inset-0 w-full h-full object-contain">
-          <img src="https://vicacanada.com/new/images/3.jpg" class="slide hidden absolute inset-0 w-full h-full object-contain">
-          <img src="https://vicacanada.com/new/images/4.jpg" class="slide hidden absolute inset-0 w-full h-full object-contain">
-          <img src="https://vicacanada.com/new/images/5.jpg" class="slide hidden absolute inset-0 w-full h-full object-contain">
-          <img src="https://vicacanada.com/new/images/6.jpg" class="slide hidden absolute inset-0 w-full h-full object-contain">
-          <img src="https://vicacanada.com/new/images/8.jpg" class="slide hidden absolute inset-0 w-full h-full object-contain">
-          <img src="https://vicacanada.com/new/images/9.jpg" class="slide hidden absolute inset-0 w-full h-full object-contain">
-          <img src="https://vicacanada.com/new/images/10.jpg" class="slide hidden absolute inset-0 w-full h-full object-contain">
+
+      <!-- ✅ Desktop Slider (Hidden on mobile) -->
+      <div class="hidden md:block md:w-1/2 relative overflow-hidden rounded-lg shadow-lg bg-white">
+        <div id="about-slider-desktop" class="relative w-full h-80">
+          <img src="https://vicacanada.com/new/images/1.jpg" class="slide-desktop absolute inset-0 w-full h-full object-contain">
+          <img src="https://vicacanada.com/new/images/2.jpg" class="slide-desktop hidden absolute inset-0 w-full h-full object-contain">
+          <img src="https://vicacanada.com/new/images/3.jpg" class="slide-desktop hidden absolute inset-0 w-full h-full object-contain">
+          <img src="https://vicacanada.com/new/images/4.jpg" class="slide-desktop hidden absolute inset-0 w-full h-full object-contain">
+          <img src="https://vicacanada.com/new/images/5.jpg" class="slide-desktop hidden absolute inset-0 w-full h-full object-contain">
+          <img src="https://vicacanada.com/new/images/6.jpg" class="slide-desktop hidden absolute inset-0 w-full h-full object-contain">
+          <img src="https://vicacanada.com/new/images/7.jpg" class="slide-desktop hidden absolute inset-0 w-full h-full object-contain">
+          <img src="https://vicacanada.com/new/images/8.jpg" class="slide-desktop hidden absolute inset-0 w-full h-full object-contain">
+          <img src="https://vicacanada.com/new/images/9.jpg" class="slide-desktop hidden absolute inset-0 w-full h-full object-contain">
+          <img src="https://vicacanada.com/new/images/10.jpg" class="slide-desktop hidden absolute inset-0 w-full h-full object-contain">
         </div>
       </div>
 
+      <!-- ✅ Mobile Slider (Visible only on mobile) -->
+      <div class="block md:hidden w-full relative overflow-hidden rounded-lg shadow-lg bg-white">
+        <div id="about-slider-mobile" class="relative w-full h-64">
+          <img src="https://vicacanada.com/new/images/1.jpg" class="slide-mobile absolute inset-0 w-full h-full object-cover">
+          <img src="https://vicacanada.com/new/images/2.jpg" class="slide-mobile hidden absolute inset-0 w-full h-full object-cover">
+          <img src="https://vicacanada.com/new/images/3.jpg" class="slide-mobile hidden absolute inset-0 w-full h-full object-cover">
+          <img src="https://vicacanada.com/new/images/4.jpg" class="slide-mobile hidden absolute inset-0 w-full h-full object-cover">
+          <img src="https://vicacanada.com/new/images/5.jpg" class="slide-mobile hidden absolute inset-0 w-full h-full object-cover">
+          <img src="https://vicacanada.com/new/images/6.jpg" class="slide-mobile hidden absolute inset-0 w-full h-full object-cover">
+          <img src="https://vicacanada.com/new/images/7.jpg" class="slide-mobile hidden absolute inset-0 w-full h-full object-cover">
+          <img src="https://vicacanada.com/new/images/8.jpg" class="slide-mobile hidden absolute inset-0 w-full h-full object-cover">
+          <img src="https://vicacanada.com/new/images/9.jpg" class="slide-mobile hidden absolute inset-0 w-full h-full object-cover">
+          <img src="https://vicacanada.com/new/images/10.jpg" class="slide-mobile hidden absolute inset-0 w-full h-full object-cover">
+        </div>
+      </div>
+        
+      <!-- ✅ About Content -->
         <div class="md:w-1/2">
           <p class="text-lg text-gray-700 mb-4">Vasaikars in Canada Association (VICA) is a non-profit organization established to unite people of Vasaikar origin residing in Canada. Our mission is to preserve and promote our cultural heritage while helping community members adapt to Canadian society. </p>
           <p class="text-lg text-gray-700 mb-4">वसईकर इन कॅनेडा (VICA) ही कॅनेडामधील वसईकर वंशीयांना एकत्र आणण्यासाठी स्थापन झालेली नानफा संस्था आहे. आमचे ध्येय आपल्या सांस्कृतिक वारशाचे जतन करणे आणि वसईकर समुदायाला कॅनेडियन समाजाशी जुळवून देणे आहे. दर वर्षी आम्ही सांस्कृतिक कार्यक्रम, उत्सव आणि सामाजिक मेळावे आयोजित करून परंपरा जिवंत ठेवतो आणि सदस्यांसाठी नेटवर्क तयार करतो.</p>
@@ -538,26 +552,22 @@
   </script>
    <!-- ✅ For Auto Scroll Images in About Section -->
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll("#about-slider .slide");
+  function startSlider(slidesSelector) {
+    const slides = document.querySelectorAll(slidesSelector);
     let index = 0;
 
     if (slides.length === 0) return;
 
-    // Make sure all slides are visible but transparent
-    slides.forEach(slide => {
-      slide.classList.remove("hidden");
-      slide.classList.remove("active");
-    });
-
-    // Activate the first one
-    slides[0].classList.add("active");
-
     setInterval(() => {
-      slides[index].classList.remove("active");
+      slides.forEach(slide => slide.classList.add('hidden'));
+      slides[index].classList.remove('hidden');
       index = (index + 1) % slides.length;
-      slides[index].classList.add("active");
     }, 3000);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    startSlider("#about-slider-desktop .slide-desktop"); // Desktop slider
+    startSlider("#about-slider-mobile .slide-mobile");   // Mobile slider
   });
 </script>
 </body>
