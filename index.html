@@ -508,23 +508,24 @@
     });
   </script>
     // For Auto scroll Images in About Section
-    <script>
-  let index = 0;
-  const slides = document.querySelectorAll("#about-slider .slide");
+   <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let index = 0;
+    const slides = document.querySelectorAll("#about-slider .slide");
 
-  function showSlide() {
-    slides.forEach((slide, i) => {
-      slide.classList.add("hidden");
-      slide.style.opacity = "0";
-    });
-    slides[index].classList.remove("hidden");
-    slides[index].style.opacity = "1";
+    function showSlide() {
+      slides.forEach(slide => {
+        slide.classList.add("hidden");
+        slide.style.opacity = "0";
+      });
+      slides[index].classList.remove("hidden");
+      slides[index].style.opacity = "1";
+      index = (index + 1) % slides.length;
+    }
 
-    index = (index + 1) % slides.length; // Loop to next image
-  }
-
-  showSlide(); // Show first image
-  setInterval(showSlide, 3000); // Change every 3 seconds
+    showSlide(); // Show first slide immediately
+    setInterval(showSlide, 3000); // Change every 3 seconds
+  });
 </script>
 </body>
 </html>
